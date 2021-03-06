@@ -1,20 +1,24 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from .models import User
+from .models import User, Patient, Doctor
 
 # Create your views here.
-def Doctor(request):
+def DoctorAuth(request):
     if request.method == "POST":
         if 'email' in request.POST:
             user = User.objects.create(
                 username=request.POST['username'], 
                 email=request.POST['email'],
                 is_doctor=True,
-                specialization=request.POST['specialization']
             )
             user.set_password(request.POST['password'])
             user.save()
+
+            doctor = Doctor.objects.create(
+                user=user,
+                specialization=request.POST['specialization']
+            )
         else:
             username = request.POST['username']
             password = request.POST['password']
@@ -26,7 +30,7 @@ def Doctor(request):
 
     return render(request, 'authentication/doctor.html')
 
-def Patient(request):
+def PatientAuth(request):
     if request.method == "POST":
         if 'email' in request.POST:
             user = User.objects.create(
@@ -36,6 +40,10 @@ def Patient(request):
             )
             user.set_password(request.POST['password'])
             user.save()
+
+            patient = Patient.objects.create(
+                user=user
+            )
         else:
             username = request.POST['username']
             password = request.POST['password']
@@ -46,18 +54,6 @@ def Patient(request):
                 return redirect("Dashboard")
 
     return render(request, 'authentication/patient.html')
-
-def Login(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-
-        if user is not None:
-            login(request, user)
-            return redirect("Register")
-
-    return render(request, 'authentication/login.html')
 
 def Dashboard(request, id):
     user = request.user
