@@ -20,3 +20,5 @@ env/
 
 # Local settings file(s)
 local_settings.py
+
+.vscode/
