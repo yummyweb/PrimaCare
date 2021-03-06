@@ -65,4 +65,4 @@ def Dashboard(request, id):
         "user": user
     }
 
-    return render(request, 'authentication/user.html', context)
+    return render(request, 'authentication/dashboard.html', context)
