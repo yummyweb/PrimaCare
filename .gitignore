@@ -22,3 +22,5 @@ env/
 local_settings.py
 
 .vscode/
+
+media/
