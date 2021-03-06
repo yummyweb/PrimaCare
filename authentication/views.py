@@ -58,6 +58,9 @@ def PatientAuth(request):
 def Dashboard(request, id):
     user = request.user
 
+    if not user:
+        return redirect("PatientAuth")
+
     context = {
         "user": user
     }
