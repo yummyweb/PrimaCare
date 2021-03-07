@@ -3,6 +3,7 @@ from data.models import Document, Medicine
 from authentication.models import Doctor, Patient
 import shortuuid
 import requests
+from data.encryption import crypt
 
 # Create your views here.
 def UserDashboard(request):
@@ -94,8 +95,10 @@ def CreateDocument(request):
             patient=patient,
             name=request.POST['name']
         )
+        userAttr = ""
         createdDocument.file = file
-        createdDocumentD.save()
+        createdDocument.save()
+        crypt(createdDocument.file.url, patient.pk, policy=patient.doctors)
         return redirect('Documents')
     
     return render(request, 'data/documentcreation.html')

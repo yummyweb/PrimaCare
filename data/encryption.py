@@ -126,6 +126,26 @@ def test():
     halfDecrypt(user_share_1_loc, encrypted_file_loc, professionalID, half_decrypted_file_loc)
     decrypt(user_share_2_loc, encrypted_file_loc, professionalID, half_decrypted_file_loc, decrypted_file_loc)
 
+def crypt(input_file, patientID, policy):
+    attributeUniverse = [
+        'professionalID:1', 
+        'professionalID:2', 
+        'professionalID:3', 
+        'profession:doctor',
+        'patientID:1', 
+        'patientID:2', 
+        'patientID:3', 
+        'patient'
+    ]
+
+    policy = "(patientId:" + str(patientID) + ") OR " + policy
+
+    #setup(attributeUniverse)
+    encrypted_file_loc = "ENCRYPTED_" + input_file
+
+    encrypt(policy, input_file, encrypted_file_loc)
+
+
 
 # debug()
-test()
+
