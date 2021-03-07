@@ -1,5 +1,7 @@
 .headline {
   font-size: 64px;
+  margin-top: -2%;
+  margin-left: 5%;
 }
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
@@ -35,6 +37,7 @@ p {
   margin-top: 4%;
   font-family: Bahnschrift SemiBold;
   float: left;
+  margin-left: 5%;
 }
 
 .card-container .pro {
@@ -116,8 +119,14 @@ footer a {
   color: #3c97bf;
   text-decoration: none;
 }
-i {
+button {
+  background-color: white;
+}
+.main button i {
   font-size: 65px;
+  color: black;
+}
+.add-doctor {
   margin-left: 25%;
   margin-top: 20%;
 }

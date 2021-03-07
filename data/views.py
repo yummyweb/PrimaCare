@@ -48,15 +48,13 @@ def DocumentsDashboard(request):
 
 def ManageDoctorDashboard(request):
     try:
-        doctors = Doctor.objects.filter()
-
-        documents = Document.objects.filter(patient=patient)
+        patient = Patient.objects.get(user=request.user)
 
         context = {
-            "documents": documents
+            "doctors": patient.doctors
         }
 
-        return render(request, 'data/documentsdashboard.html', context)
+        return render(request, 'data/doctor.html', context)
 
     except:
         return redirect('DoctorDashboard')

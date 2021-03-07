@@ -27,60 +27,65 @@
                 </a>
             </li>
             <li>
-                <a href="" name="tab5"><i class="fas fa-user-md"></i>Doctors</a>
+                <a href="{% url 'Doctor' %}" name="tab5">
+                    <i class="fas fa-user-md"></i>Doctors
+                </a>
             </li>
             </ul>
         </div>
 
         <div class="main">
             <div id="tab1">
-                <p class="headline">{{ user.user.username|upper }}</p>
-                <div class="container">
-                    <div class="appointment">
-                        <div class="upcoming">
-                            <div class="upapt"><p class="upcomingapt">UPCOMING APPOINTMENTS</p></div>
-                            <br>
-                            
-                            <ol class="nextapt">
-                                <li class="newli">08/03/2021 <p class="desdes"> Dr Bray Blood Checkup</p></li>
-                                <li class="newli">15/03/2021 <p class="desdes"> XRAY Appt At Summerville</p></li>
-                            </ol>
-                            
+                <div class="limiter">
+                    <button class="helloname">HELLO ANNE</button>
+                    <p class="headline">{{ user.user.username|upper }}</p>
+                    <div class="container">
+                        <div class="appointment">
+                            <div class="upcoming">
+                                <div class="upapt"><p class="upcomingapt">UPCOMING APPOINTMENTS</p></div>
+                                <br>
+                                
+                                <ol class="nextapt">
+                                    <li class="newli">08/03/2021 <p class="desdes"> Dr Bray Blood Checkup</p></li>
+                                    <li class="newli">15/03/2021 <p class="desdes"> XRAY Appt At Summerville</p></li>
+                                </ol>
+                                
+                                </div>
+                                <div class="past">
+                                    <div class="upapt"><p class="pastapt">PAST APPOINTMENTS</p></div>
+                                <br>
+                                
+                                <ol class="nextapt">
+                                    <li class="newli">01/03/2021 <p class="desdes"> Monthly Dental Checkup</p></li>
+                                    <li class="newli">23/02/2021 <p class="desdes"> Pre Anaesthesia Checkup</p></li>
+                                
+                                </ol>
                             </div>
-                            <div class="past">
-                                <div class="upapt"><p class="pastapt">PAST APPOINTMENTS</p></div>
-                            <br>
-                            
-                            <ol class="nextapt">
-                                <li class="newli">01/03/2021 <p class="desdes"> Monthly Dental Checkup</p></li>
-                                <li class="newli">23/02/2021 <p class="desdes"> Pre Anaesthesia Checkup</p></li>
-                            
-                              </ol>
                         </div>
-                    </div>
-                    <div class="card">
-                        <i class="fas fa-user-circle"></i>
-                        <div class="detail">
-                            <p class="dob">PHRID: </p>
-                            <p class="date">{{ user.user.pk }}</p>
+                        <div class="card">
+                            <i class="fas fa-user-circle"></i>
+                            <div class="detail">
+                                <p class="dob">PHRID: </p>
+                                <p class="date">{{ user.user.pk }}</p>
+                            </div>
+                            <div class="detail">
+                                <p class="dob">EMAIL: </p>
+                                <p class="date">{{ user.user.email }}</p>
+                            </div>
+                            <div class="detail">
+                                <p class="dob">AGE: </p>
+                                <p class="date">{{ user.age }}</p>
+                            </div>
+                            <div class="detail">
+                                <p class="dob">HEIGHT : </p>
+                                <p class="date">  5' 8 Foot</p>
+                            </div>
+                            <div class="detail">
+                                <p class="dob">DISEASE : </p>
+                                <p class="date">{{ user.disease }}</p>
+                            </div>
+                            <button style="background-color: cadetblue; border: none; margin-top: 10px; color: white; padding: 5px;"><i style="font-size: 10px;" class="fa fa-folder"></i> Save</button>
                         </div>
-                        <div class="detail">
-                            <p class="dob">EMAIL: </p>
-                            <p class="date">{{ user.user.email }}</p>
-                        </div>
-                        <div class="detail">
-                            <p class="dob">AGE: </p>
-                            <p class="date">{{ user.age }}</p>
-                        </div>
-                        <div class="detail">
-                            <p class="dob">HEIGHT : </p>
-                            <p class="date">  5' 8 Foot</p>
-                        </div>
-                        <div class="detail">
-                            <p class="dob">DISEASE : </p>
-                            <p class="date">{{ user.disease }}</p>
-                        </div>
-                        <button style="background-color: cadetblue; border: none; margin-top: 10px; color: white; padding: 5px;"><i style="font-size: 10px;" class="fa fa-folder"></i> Save</button>
                     </div>
                 </div>
             </div>

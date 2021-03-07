@@ -9,15 +9,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
-    <link rel="stylesheet" href="{% static 'css/medicine.css' %}">
     {% block styles %}{% endblock styles %}
     <style>
       @font-face {
         font-family: "Paytone One";
         src: url("{% static 'fonts/paytoneone-regular-webfont.woff' %}") format("woff");
-      }
-      body {
-        overflow: hidden
       }
     </style>
     <title>{% block title %}{% endblock title %} | PrimaCare</title>
@@ -25,5 +21,6 @@
   <body>
     {% block body %}
     {% endblock body %}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>

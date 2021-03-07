@@ -1,4 +1,11 @@
-{% extends 'data/base.html' %}Medicine {% block title %}Medicine{% endblock title %} 
+{% extends 'data/base.html' %} 
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/medicine.css' %}">
+{% endblock styles %}
+
+{% block title %}Medicine{% endblock title %} 
 {% block body %}
 <div class="admin-panel">
   <div class="slidebar">
@@ -22,7 +29,9 @@
         <a href="" name="tab4"><i class="fas fa-history"></i>History</a>
       </li>
       <li>
-        <a href="" name="tab5"><i class="fas fa-user-md"></i>Doctors</a>
+        <a href="{% url 'Doctor' %}" name="tab5">
+          <i class="fas fa-user-md"></i>Doctors
+        </a>
       </li>
     </ul>
   </div>

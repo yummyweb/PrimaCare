@@ -6,23 +6,68 @@
 {% block title %}Manage Doctors{% endblock title %}
 
 {% block body %}
-    <div class="headline"> MANAGE DOCTORS</div>
-    <div class="card-container">
-        <span class="pro">ONLINE</span>
-        <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
-        <h3>Dr Ricky Bray</h3>
-        <h6>Summerville national hospital</h6>
-        <p>Neuro heart surgeon<br /> and department of radiology</p>
-        <div class="buttons">
-            <button class="primary">
-                Message
-            </button>
-            <button class="primary">
-                Remove
-            </button>
+<div class="admin-panel">
+    <div class="slidebar">
+      <ul>
+        <li>
+          <a href="{% url 'User' %}" name="tab1">
+            <i class="fas fa-tachometer-alt"></i>Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'Documents' %}" name="tab2">
+            <i class="far fa-file"></i>Documents
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'Medicine' %}" name="tab3">
+            <i class="fas fa-tablets"></i>Medicine
+          </a>
+        </li>
+        <li>
+          <a href="" name="tab4"><i class="fas fa-history"></i>History</a>
+        </li>
+        <li id="active">
+          <a href="{% url 'Doctor' %}" name="tab5"><i class="fas fa-user-md"></i>Doctors</a>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="main">
+      <div id="tab2">
+            <div class="headline"> MANAGE DOCTORS</div>
+            <div class="card-container">
+                <span class="pro">ONLINE</span>
+                <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+                <h3>Dr Ricky Bray</h3>
+                <h6>Summerville national hospital</h6>
+                <p>Neuro heart surgeon<br /> and department of radiology</p>
+                <div class="buttons">
+                    <button class="primary">
+                        Message
+                    </button>
+                    <button class="primary">
+                        Remove
+                    </button>
+                </div>
+            </div>
+
+            <form method="post">
+              {% csrf_token %}
+              <button style="border: none;" class="add-doctor">
+                <i class="fas fa-plus-circle"></i>
+              </button>
+            </form>
         </div>
     </div>
-
-    <i class="fas fa-plus-circle"></i>
+</div>
+d
+<script>
+  // document.querySelector('.main i').addEventListener('click', () => {
+  //   swal({
+  //     text: "A security key is sent to you on your phone number. Please share it with your doctor."
+  //   })
+  // })
+</script>
 {% endblock body %}
     
