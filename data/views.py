@@ -115,6 +115,23 @@ def DoctorDashboard(request):
 
     return render(request, 'data/doctordashboard.html', context)
 
+def DoctorPatients(request):
+    doctor = Doctor.objects.get(user=request.user)
+    patients = Patient.objects.all()
+
+    currentPatients = []
+
+    for p in patients:
+        for d in p.doctors.all():
+            if d == doctor:
+                currentPatients.append(p)
+
+    context = {
+        "patients": currentPatients
+    }
+
+    return render(request, 'data/doctorpatients.html', context)
+
 def PatientAccess(request):
     try:
         if request.method == "POST":

@@ -1,0 +1,28 @@
+{% extends 'data/base.html' %}
+
+{% block title %}Patients{% endblock title %}
+
+{% block body %}
+    <div class="admin-panel">
+        <div class="slidebar">
+            <ul>
+                <li>
+                    <a href="{% url 'DoctorDashboard' %}" name="tab1">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard
+                    </a>
+                </li>
+                <li id="active">
+                    <a href="{% url 'DoctorPatients' %}" name="tab2">
+                        <i class="fas fa-hand-holding-medical"></i>Patients
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div id="tab1">
+                <p class="headline">{{ user.user.username|upper }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
