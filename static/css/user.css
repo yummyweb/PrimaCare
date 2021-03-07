@@ -33,11 +33,11 @@ body {
   text-align: center;
 }
 .headline {
-  margin-left: 0%;
+  margin-left: 5%;
   font-size: 54px;
 
   font-family: Paytone One;
-  margin-top: -5%;
+  margin-top: -2%;
 }
 .appointment {
   width: 60%;

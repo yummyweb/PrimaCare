@@ -1,4 +1,10 @@
 {% extends 'data/base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/documents.css' %}">
+{% endblock styles %}
+  
 
 {% block title %}Documents{% endblock title %} 
 

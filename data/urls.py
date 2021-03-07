@@ -1,8 +1,9 @@
 from django.urls import path 
 from data.views import (CreateDocument, CreateMedicine, DoctorDashboard, DocumentsDashboard,
-    ManageDoctorDashboard, MedicationsDashboard, PatientAccess, UserDashboard)
+    LandingPage, ManageDoctorDashboard, MedicationsDashboard, PatientAccess, UserDashboard)
 
 urlpatterns = [
+    path('', LandingPage, name="Landing"),
     path('dashboard/patient/', UserDashboard, name="User"),
     path('medicine/', MedicationsDashboard, name="Medicine"),
     path('document/', DocumentsDashboard, name="Documents"),

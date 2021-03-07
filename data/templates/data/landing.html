@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PrimaCare</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i|PT+Serif:700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap boxed-container">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="#">
+                              <img src="{% static 'img/ourlogo.png' %}" class="ourlogo">
+                            </a>
+                        </h1>
+                    </div>
+                    <ul class="header-links list-reset m-0">
+                        
+                        <li>
+                            <a class="button button-sm button-shadow" href="#">Github</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero text-light text-center">
+                <div class="container-sm">
+                    <div class="hero-inner">
+                        <h1 class="hero-title h2-mobile mt-0 is-revealing">PrimaCare</h1>
+                        <p class="hero-paragraph is-revealing">Your Health is our first priority at PrimaCare! <br> Login or sign up!</p>
+
+                        <p class="hero-cta is-revealing"><a class="button button-secondary button-shadow" href="{% url 'Patient' %}">PATIENT</a></p>
+                        <p class="hero-cta is-revealing"><a class="button button-secondary button-shadow" href="{% url 'Doctor' %}">DOCTOR</a></p>
+                        
+                    </div>
+                </div>
+            </section>
+
+    <script src="{% static 'js/landing.min.js' %}"></script>
+</body>
+</html>

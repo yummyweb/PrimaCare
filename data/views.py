@@ -6,6 +6,9 @@ import requests
 from data.encryption import crypt
 
 # Create your views here.
+def LandingPage(request):
+    return render(request, 'data/landing.html')
+
 def UserDashboard(request):
     try:
         patient = Patient.objects.get(user=request.user)
@@ -65,7 +68,7 @@ def ManageDoctorDashboard(request):
             print(response)
 
         context = {
-            "doctors": patient.doctors
+            "doctors": patient.doctors.all()
         }
 
         return render(request, 'data/doctor.html', context)
