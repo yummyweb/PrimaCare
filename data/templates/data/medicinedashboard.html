@@ -40,38 +40,16 @@
               <th>SET REMINDER</th>
               <th>REMOVE</th>
             </tr>
-            <tr>
-              <td>Calcium Tablets</td>
-              <td>3 per day</td>
-              <td>SET REMINDER</td>
-              <td>REMOVE</td>
-            </tr>
-            <tr>
-              <td>Calcium Tablets</td>
-              <td>3 per day</td>
-              <td>SET REMINDER</td>
-              <td>REMOVE</td>
-            </tr>
-            <tr>
-              <td>Calcium Tablets</td>
-              <td>3 per day</td>
-              <td>SET REMINDER</td>
-              <td>REMOVE</td>
-            </tr>
-            <tr>
-              <td>Calcium Tablets</td>
-              <td>3 per day</td>
-              <td>SET REMINDER</td>
-              <td>REMOVE</td>
-            </tr>
-            <tr>
-              <td>Calcium Tablets</td>
-              <td>3 per day</td>
-              <td>SET REMINDER</td>
-              <td>REMOVE</td>
-            </tr>
+            {% for medicine in medications %}
+              <tr>
+                <td>{{ medicine.name }}</td>
+                <td>{{ medicine.quantity }}</td>
+                <td>SET REMINDER</td>
+                <td>REMOVE</td>
+              </tr>
+            {% endfor %}
           </table>
-          <button class="add">ADD MEDICINE</button>
+          <button class="add"><a href="{% url 'CreateMedicine' %}" style="text-decoration: none;">ADD MEDICINE</a></button>
         </div>
       </div>
     </div>

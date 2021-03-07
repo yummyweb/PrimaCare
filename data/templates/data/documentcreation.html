@@ -1,0 +1,47 @@
+{% extends 'data/base.html' %} 
+{% load static %}
+
+{% block styles %}<link rel="stylesheet" href="{% static 'css/documentform.css' %}">{% endblock styles %}
+    
+
+{% block title %}Create Document{% endblock title%} 
+
+{% block body %}
+<div class="contact_form">
+  <div class="formulario">
+    <h1>Document Form</h1>
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <p>
+        <label for="name" class="name"
+          >Name
+          <span class="name">*</span>
+        </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="Document Name"
+        />
+      </p>
+
+      <p>
+        <label for="name" class="name"
+          >Document
+          <span class="name">*</span>
+        </label>
+        <input
+          type="file"
+          name="file"
+          id="name"
+          required
+        />
+      </p>
+
+      <button type="submit" id="submit" class="submit-button">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock body %}

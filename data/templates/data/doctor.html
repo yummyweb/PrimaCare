@@ -1,0 +1,28 @@
+{% extends 'data/base.html' %}
+{% load static %}
+
+{% block styles %}<link rel="stylesheet" href="{% static 'css/doctor.css' %}">{% endblock styles %}
+
+{% block title %}Manage Doctors{% endblock title %}
+
+{% block body %}
+    <div class="headline"> MANAGE DOCTORS</div>
+    <div class="card-container">
+        <span class="pro">ONLINE</span>
+        <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+        <h3>Dr Ricky Bray</h3>
+        <h6>Summerville national hospital</h6>
+        <p>Neuro heart surgeon<br /> and department of radiology</p>
+        <div class="buttons">
+            <button class="primary">
+                Message
+            </button>
+            <button class="primary">
+                Remove
+            </button>
+        </div>
+    </div>
+
+    <i class="fas fa-plus-circle"></i>
+{% endblock body %}
+    

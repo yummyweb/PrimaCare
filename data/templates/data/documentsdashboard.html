@@ -43,36 +43,14 @@
                     <th>DOWNLOAD</th>
                     <th>REMOVE</th>
                 </tr>
-                <tr>
-                    <td>XRAY Left Tibia</td>
-                    <td>02/03/2021</td>
+                {% for document in documents %}
+                  <tr>
+                    <td>{{ document.name }}</td>
+                    <td>{{ document.uploaded_at }}</td>
                     <td>DOWNLOAD</td>
                     <td>REMOVE</td>
-                </tr>
-                <tr>
-                    <td>XRAY Report</td>
-                    <td>01/03/2021</td>
-                    <td>DOWNLOAD</td>
-                    <td>REMOVE</td>
-                </tr>
-                <tr>
-                    <td>Prescription</td>
-                    <td>25/02/2021</td>
-                    <td>DOWNLOAD</td>
-                    <td>REMOVE</td>
-                </tr>
-                <tr>
-                    <td>Blood Report</td>
-                    <td>19/02/2021</td>
-                    <td>DOWNLOAD</td>
-                    <td>REMOVE</td>
-                </tr>
-                <tr>
-                    <td>Sugar Report</td>
-                    <td>05/02/2021</td>
-                    <td>DOWNLOAD</td>
-                    <td>REMOVE</td>
-                </tr>
+                  </tr>
+                {% endfor %}
                 </table>
                 <button class="add">ADD DOCUMENT</button>
             </div>
