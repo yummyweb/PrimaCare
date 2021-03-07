@@ -1,32 +1,57 @@
-from django.shortcuts import render
-from data.models import Medicine
+from django.shortcuts import render, redirect
+from data.models import Document, Medicine
 from authentication.models import Doctor, Patient
 
 # Create your views here.
 def UserDashboard(request):
-    patient = Patient.objects.get(user=request.user)
-    
-    if not patient:
-        doctor = Doctor.objects.get(user=request.user)
+    try:
+        patient = Patient.objects.get(user=request.user)
 
         context = {
-            "user": doctor,
-            "id_doctor": True
+            "user": patient
         }
-    else:
-        context = {
-            "user": patient,
-            "is_doctor": False
-        }
+        
+    except:
+        return redirect('DoctorDashboard')
     
     return render(request, 'data/userdashboard.html', context) 
 
-def Medications(request):
-    patient = Patient.objects.filter(user=request.user)
-    medications = Medicine.objects.filter(patient=patient)
+def MedicationsDashboard(request):
+    try:
+        patient = Patient.objects.get(user=request.user)
+
+        medications = Medicine.objects.filter(patient=patient)
+
+        context = {
+            "medications": medications
+        }
+
+        return render(request, 'data/medicinedashboard.html', context)
+
+    except:
+        return redirect('User')
+
+def DocumentsDashboard(request):
+    try:
+        patient = Patient.objects.get(user=request.user)
+
+        documents = Document.objects.filter(patient=patient)
+
+        context = {
+            "documents": documents
+        }
+
+        return render(request, 'data/documentsdashboard.html', context)
+
+    except:
+        return redirect('User')
+
+def DoctorDashboard(request):
+    doctor = Doctor.objects.get(user=request.user)
 
     context = {
-        "medications": medications
+        "user": doctor
     }
 
-    return render(request, 'data/medicine.html', context)
+    return render(request, 'data/doctordashboard.html', context)
+

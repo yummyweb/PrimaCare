@@ -1,0 +1,80 @@
+{% extends 'data/base.html' %}Medicine {% block title %}Medicine{% endblock title %} 
+{% block body %}
+<div class="admin-panel">
+  <div class="slidebar">
+    <ul>
+      <li>
+        <a href="{% url 'User' %}" name="tab1">
+          <i class="fas fa-tachometer-alt"></i>Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'Documents' %}" name="tab2">
+          <i class="far fa-file"></i>Documents
+        </a>
+      </li>
+      <li id="active">
+        <a href="{% url 'Medicine' %}" name="tab3">
+          <i class="fas fa-tablets"></i>Medicine
+        </a>
+      </li>
+      <li>
+        <a href="" name="tab4"><i class="fas fa-history"></i>History</a>
+      </li>
+      <li>
+        <a href="" name="tab5"><i class="fas fa-user-md"></i>Doctors</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div id="tab2">
+      <div class="limiter">
+        <button class="helloname">HELLO ANNE</button>
+        <p class="headline">YOUR MEDICINES</p>
+        <div class="maintb">
+          <table>
+            <tr>
+              <th>NAME</th>
+              <th>QUANTITY</th>
+              <th>SET REMINDER</th>
+              <th>REMOVE</th>
+            </tr>
+            <tr>
+              <td>Calcium Tablets</td>
+              <td>3 per day</td>
+              <td>SET REMINDER</td>
+              <td>REMOVE</td>
+            </tr>
+            <tr>
+              <td>Calcium Tablets</td>
+              <td>3 per day</td>
+              <td>SET REMINDER</td>
+              <td>REMOVE</td>
+            </tr>
+            <tr>
+              <td>Calcium Tablets</td>
+              <td>3 per day</td>
+              <td>SET REMINDER</td>
+              <td>REMOVE</td>
+            </tr>
+            <tr>
+              <td>Calcium Tablets</td>
+              <td>3 per day</td>
+              <td>SET REMINDER</td>
+              <td>REMOVE</td>
+            </tr>
+            <tr>
+              <td>Calcium Tablets</td>
+              <td>3 per day</td>
+              <td>SET REMINDER</td>
+              <td>REMOVE</td>
+            </tr>
+          </table>
+          <button class="add">ADD MEDICINE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

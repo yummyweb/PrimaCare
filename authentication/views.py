@@ -26,7 +26,7 @@ def DoctorAuth(request):
 
             if user is not None:
                 login(request, user)
-                return redirect("Dashboard") 
+                return redirect("User") 
 
     return render(request, 'authentication/doctor.html')
 

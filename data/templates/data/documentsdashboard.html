@@ -1,0 +1,83 @@
+{% extends 'data/base.html' %}
+
+{% block title %}Documents{% endblock title %} 
+
+{% block body %}
+<div class="admin-panel">
+    <div class="slidebar">
+      <ul>
+        <li>
+          <a href="{% url 'User' %}" name="tab1">
+            <i class="fas fa-tachometer-alt"></i>Dashboard
+          </a>
+        </li>
+        <li id="active">
+          <a href="{% url 'Documents' %}" name="tab2">
+            <i class="far fa-file"></i>Documents
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'Medicine' %}" name="tab3">
+            <i class="fas fa-tablets"></i>Medicine
+          </a>
+        </li>
+        <li>
+          <a href="" name="tab4"><i class="fas fa-history"></i>History</a>
+        </li>
+        <li>
+          <a href="" name="tab5"><i class="fas fa-user-md"></i>Doctors</a>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="main">
+      <div id="tab2">
+        <div class="limiter">
+            <button class="helloname">HELLO ANNE</button>
+            <p class="headline">YOUR DOCUMENTS</p>
+            <div class="maintb">
+                <table>
+                <tr>
+                    <th>TITLE</th>
+                    <th>DATE ADDED</th>
+                    <th>DOWNLOAD</th>
+                    <th>REMOVE</th>
+                </tr>
+                <tr>
+                    <td>XRAY Left Tibia</td>
+                    <td>02/03/2021</td>
+                    <td>DOWNLOAD</td>
+                    <td>REMOVE</td>
+                </tr>
+                <tr>
+                    <td>XRAY Report</td>
+                    <td>01/03/2021</td>
+                    <td>DOWNLOAD</td>
+                    <td>REMOVE</td>
+                </tr>
+                <tr>
+                    <td>Prescription</td>
+                    <td>25/02/2021</td>
+                    <td>DOWNLOAD</td>
+                    <td>REMOVE</td>
+                </tr>
+                <tr>
+                    <td>Blood Report</td>
+                    <td>19/02/2021</td>
+                    <td>DOWNLOAD</td>
+                    <td>REMOVE</td>
+                </tr>
+                <tr>
+                    <td>Sugar Report</td>
+                    <td>05/02/2021</td>
+                    <td>DOWNLOAD</td>
+                    <td>REMOVE</td>
+                </tr>
+                </table>
+                <button class="add">ADD DOCUMENT</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div
+{% endblock body %}

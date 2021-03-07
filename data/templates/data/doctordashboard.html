@@ -6,29 +6,16 @@
     <div class="admin-panel">
         <div class="slidebar">
             <ul>
-            <li id="active">
-                <a href="{% url 'User' %}" name="tab1">
-                    <i class="fas fa-tachometer-alt"></i>Dashboard
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'Documents' %}" name="tab2">
-                    <i class="far fa-file"></i>Documents
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'Medicine' %}" name="tab3">
-                    <i class="fas fa-tablets"></i>Medicine
-                </a>
-            </li>
-            <li>
-                <a href="" name="tab4">
-                    <i class="fas fa-history"></i>History
-                </a>
-            </li>
-            <li>
-                <a href="" name="tab5"><i class="fas fa-user-md"></i>Doctors</a>
-            </li>
+                <li id="active">
+                    <a href="{% url 'DoctorDashboard' %}" name="tab1">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'Documents' %}" name="tab2">
+                        <i class="fas fa-hand-holding-medical"></i>Patients
+                    </a>
+                </li>
             </ul>
         </div>
 
@@ -69,16 +56,8 @@
                             <p class="date">{{ user.user.email }}</p>
                         </div>
                         <div class="detail">
-                            <p class="dob">AGE: </p>
-                            <p class="date">{{ user.age }}</p>
-                        </div>
-                        <div class="detail">
-                            <p class="dob">HEIGHT : </p>
-                            <p class="date">  5' 8 Foot</p>
-                        </div>
-                        <div class="detail">
-                            <p class="dob">DISEASE : </p>
-                            <p class="date">{{ user.disease }}</p>
+                            <p class="dob">SPECIALIZATION: </p>
+                            <p class="date">{{ user.specialization }}</p>
                         </div>
                         <button style="background-color: cadetblue; border: none; margin-top: 10px; color: white; padding: 5px;"><i style="font-size: 10px;" class="fa fa-folder"></i> Save</button>
                     </div>
