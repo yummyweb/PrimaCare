@@ -21,6 +21,7 @@ class Patient(models.Model):
     disease = models.CharField(max_length=200, null=True, blank=True)
     phone = models.CharField(max_length=200, null=True, blank=True)
     age = models.IntegerField(blank=True, null=True)
+    security_key = models.CharField(max_length=200, blank=True, null=True)
     profile_completed = models.BooleanField(default=False)
 
     def __str__(self):

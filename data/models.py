@@ -26,10 +26,3 @@ class Document(models.Model):
 
    def __str__(self):
        return self.name + " - document"
-
-class Access(models.Model):
-    patient = models.OneToOneField(Patient, on_delete=models.CASCADE)
-    doctor = models.OneToOneField(Doctor, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return hashlib.sha256(str(self.patient.user.username + " ---> " + self.doctor.user.username).encode("utf-8")).hexdigest()

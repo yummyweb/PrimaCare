@@ -1,0 +1,46 @@
+{% extends 'data/base.html' %}
+{% load static %}
+
+
+{% block styles %}<link rel="stylesheet" href="{% static 'css/patientaccessform.css' %}">{% endblock styles %}
+
+{% block title %}Patient Access{% endblock title %}
+
+{% block body %}
+  <div class="contact_form">
+    <div class="formulario">
+      <h1>Patient Access Form</h1>
+  
+      <form method="post">
+        {% csrf_token %}
+        <p>
+          <label for="number" class="name"
+            >PHR ID
+            <span class="name">*</span>
+          </label>
+          <input
+            type="number"
+            name="phrid"
+            required
+            placeholder="Patient's PHR ID"
+          />
+        </p>
+  
+        <p>
+          <label for="number" class="name"
+            >SECURITY <code></code>
+            <span class="name">*</span>
+          </label>
+          <input
+            type="text"
+            name="security_key"
+            required
+            placeholder="xxxxxx"
+          />
+        </p>
+  
+        <button type="submit" id="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+  </div>  
+{% endblock body %}

@@ -1,6 +1,6 @@
 from django.urls import path 
 from data.views import (CreateDocument, CreateMedicine, DoctorDashboard, DocumentsDashboard,
-    ManageDoctorDashboard, MedicationsDashboard, UserDashboard)
+    ManageDoctorDashboard, MedicationsDashboard, PatientAccess, UserDashboard)
 
 urlpatterns = [
     path('dashboard/patient/', UserDashboard, name="User"),
@@ -9,5 +9,6 @@ urlpatterns = [
     path('doctors/', ManageDoctorDashboard, name="Doctor"),
     path('medicine/create/', CreateMedicine, name="CreateMedicine"),
     path('document/create/', CreateDocument, name="CreateDocument"),
-    path('dashboard/doctor/', DoctorDashboard, name="DoctorDashboard")
+    path('dashboard/doctor/', DoctorDashboard, name="DoctorDashboard"),
+    path('patient-access/', PatientAccess, name="PatientAccess")
 ]

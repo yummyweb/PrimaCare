@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from data.models import Document, Medicine
 from authentication.models import Doctor, Patient
+import shortuuid
+import requests
 
 # Create your views here.
 def UserDashboard(request):
@@ -50,13 +52,25 @@ def ManageDoctorDashboard(request):
     try:
         patient = Patient.objects.get(user=request.user)
 
+        if request.method == "POST":
+            security_key = shortuuid.uuid()[:10]
+            patient.security_key = security_key
+            patient.save()
+            response = requests.post('https://events-api.notivize.com/applications/a1963e82-a8db-41aa-92fd-d53594e4661a/event_flows/02f1c475-4550-4d2e-9526-223aead47ebd/events', json = {
+                'access_id': '4358tgf1e',
+                'phone': '+12263408677',
+                'security_key': security_key
+            })
+            print(response)
+
         context = {
             "doctors": patient.doctors
         }
 
         return render(request, 'data/doctor.html', context)
 
-    except:
+    except Exception as e:
+        print(e)
         return redirect('DoctorDashboard')
 
 def CreateMedicine(request):
@@ -95,3 +109,19 @@ def DoctorDashboard(request):
 
     return render(request, 'data/doctordashboard.html', context)
 
+def PatientAccess(request):
+    try:
+        if request.method == "POST":
+            doctor = Doctor.objects.get(user=request.user)
+            try:
+                patient = Patient.objects.get(
+                    pk=request.POST['phrid'],
+                    security_key=request.POST['security_key']
+                )
+                patient.doctors.add(doctor)
+            except:
+                return render(request, 'data/patientaccessform.html', {"message": "Error! Invalid credentials."})
+    except:
+        return redirect('Doctor')
+
+    return render(request, 'data/patientaccessform.html')
