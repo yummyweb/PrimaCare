@@ -1,0 +1,67 @@
+{% extends 'data/base.html' %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block body %}
+    <div class="admin-panel">
+        <div class="slidebar">
+            <ul>
+            <li id="active">
+                <a href="" name="tab1">
+                    <i class="fas fa-tachometer-alt"></i>Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="" name="tab2"><i class="far fa-file"></i>Documents</a>
+            </li>
+            <li>
+                <a href="" name="tab3"><i class="fas fa-tablets"></i>Medicine</a>
+            </li>
+            <li>
+                <a href="" name="tab4"><i class="fas fa-history"></i>History</a>
+            </li>
+            <li>
+                <a href="" name="tab5"><i class="fas fa-user-md"></i>Doctors</a>
+            </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div id="tab1">
+                <p class="headline">{{ user.user.username|upper }}</p>
+                <div class="container">
+                    <div class="appointment">
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-user-circle"></i>
+                        
+                        {% if is_doctor %}
+                        {% else %}
+                            <div class="detail">
+                                <p class="dob">PHRID: </p>
+                                <p class="date">{{ user.user.pk }}</p>
+                            </div>
+                            <div class="detail">
+                                <p class="dob">EMAIL: </p>
+                                <p class="date">{{ user.user.email }}</p>
+                            </div>
+                            <div class="detail">
+                                <p class="dob">AGE: </p>
+                                <p class="date">{{ user.age }}</p>
+                            </div>
+                            <div class="detail">
+                                <p class="dob">HEIGHT : </p>
+                                <p class="date">  5' 8 Foot</p>
+                            </div>
+                            <div class="detail">
+                                <p class="dob">DISEASE : </p>
+                                <p class="date">{{ user.disease }}</p>
+                            </div>
+                            <button style="background-color: cadetblue; border: none; margin-top: 10px; color: white; padding: 5px;"><i style="font-size: 10px;" class="fa fa-folder"></i> Save</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

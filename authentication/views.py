@@ -51,18 +51,6 @@ def PatientAuth(request):
 
             if user is not None:
                 login(request, user)
-                return redirect("Dashboard")
+                return redirect("User")
 
     return render(request, 'authentication/patient.html')
-
-def Dashboard(request, id):
-    user = request.user
-
-    if not user:
-        return redirect("PatientAuth")
-
-    context = {
-        "user": user
-    }
-
-    return render(request, 'authentication/dashboard.html', context)

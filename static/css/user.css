@@ -1,0 +1,46 @@
+body {
+  font-family: Paytone One;
+}
+.card {
+  height: 450px;
+  background-color: #c4c4c4;
+  margin-top: -2%;
+  float: left;
+  width: 30%;
+  padding: 10px;
+  max-height: 450px;
+  text-align: center;
+  display: block;
+}
+.headline {
+  margin-left: 1.5%;
+  font-size: 48px;
+}
+.appointment {
+  width: 60%;
+  float: left;
+  margin-right: 3%;
+  height: 350px;
+  background-color: black;
+}
+i {
+  font-size: 140px;
+  margin-top: 5%;
+}
+
+.dob {
+  text-align: left;
+  font-size: 20px;
+  display: inline;
+  word-wrap: break-word;
+}
+.date {
+  text-align: right;
+  color: #8d7272;
+  font-size: 20px;
+  display: inline;
+  word-wrap: break-word;
+}
+.detail {
+  margin-top: 5%;
+}
