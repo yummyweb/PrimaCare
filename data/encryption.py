@@ -148,4 +148,5 @@ def crypt(input_file, patientID, policy):
 
 
 # debug()
+test()
 
