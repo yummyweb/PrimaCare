@@ -10,4 +10,7 @@ Then make migrations:
 python manage.py migrate
 ```
 
-Then
+Then run server:
+```
+python manage.py runserver
+```
